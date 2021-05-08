@@ -1,0 +1,87 @@
+.difficulty
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.difficulty__paragraph
+    text-align: center
+    margin-top: 2rem
+    color: #555
+
+.difficulty__cards
+    width: 80%
+    display: flex
+    cursor: pointer
+    justify-content: space-between
+
+.difficulty__card
+    box-shadow: 0 3px 2px 0px rgba(#646464, 80%)
+    cursor: pointer
+    border-radius: 0.5rem
+    width: 32%
+    height: 8rem
+    display: flex
+    flex-direction: column
+    position: relative
+    overflow: hidden
+    justify-content: center
+    align-items: center
+    z-index: -2
+
+.difficulty__card__bubble--hard
+    right: 0
+
+.difficulty__card__bubble--medium
+    right: 0
+    top: 0
+    width: 63%
+
+.difficulty__card__bubble
+    position: absolute
+    bottom: 0
+    z-index: -1
+    width: 78%
+    align-self: stretch
+    img
+        margin: 0
+        padding: 0
+        vertical-align: top
+        position: relative
+
+.difficulty__card--easy
+    background-color: #f89040
+    
+.difficulty__card__image
+    width: 66.66%
+
+.difficulty__card__title
+    text-align: center
+    font-size: 0.6rem
+    color: $font
+    margin: 0
+    padding: 0
+
+.difficulty__card__paragraph
+    text-align: center
+    font-size: 0.5rem
+    color: #ddd
+    padding: 0 0.5rem
+
+.difficulty__card--hard
+    background-color: #D04820
+
+.difficulty__card--medium
+    background-color: #FF7657
+
+.difficulty__selected
+    transform: scale(1.4)
+    z-index: 1
+
+.difficulty_button
+    padding: 0.15rem 0.5rem
+    width: 40%
+    margin: 0.5rem auto 
+    p
+        font-size: .6rem
+    i
+        font-size: .5rem

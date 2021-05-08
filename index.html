@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
 <body>
-    <div class="pokeball-container">
+    <section class="pokeball-container">
         <div class="pokeball">
             <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="pokeball" clip-path="url(#clip0)">
@@ -48,8 +48,56 @@
             <span class="pokeball__letter">.</span>
             <span class="pokeball__letter">.</span>
         </div>
-    </div>
-    
+    </section>
+    <main class="hidden home">
+        <h1 class="home__title">Pokemon Game Memory</h1>
+        <div class="content" id="hideHome">
+            <p class="content__description">Play a pokemon memory game, with first generation pokemon and random pokemon cards.</p>
+            <div class="content__button" id="playNowButton">
+                <p>Play Now</p>
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+        <div class="hidden difficulty" id="difficulty">
+            <div class="difficulty__cards" id="difficultyCards">
+                <div class="difficulty__card difficulty__card--easy">
+                    <img class="difficulty__card__image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander">
+                    <div class="difficulty__texts-container">
+                        <h3 class="difficulty__card__title">Easy</h3>
+                        <p class="difficulty__card__paragraph">Play with 8 cards, 4 pairs</p>
+                    </div>
+                    <div  class="difficulty__card__bubble">
+                        <img src="src/img/bubble-easy.svg" alt="bubble">
+                    </div>
+                </div>
+                <div class="difficulty__card difficulty__card--medium difficulty difficulty__selected">
+                    <img class="difficulty__card__image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" alt="Charmander">
+                    <div class="difficulty__texts-container">
+                        <h3 class="difficulty__card__title">Easy</h3>
+                        <p class="difficulty__card__paragraph">Play with 32 cards, 16 pairs</p>
+                        <div class="content__button difficulty_button">
+                            <p>Play</p>
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div  class="difficulty__card__bubble difficulty__card__bubble--medium">
+                        <img src="src/img/bubble-medium.svg" alt="bubble">
+                    </div>
+                </div>
+                <div class="difficulty__card difficulty__card--hard">
+                    <img class="difficulty__card__image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charmander">
+                    <div class="difficulty__texts-container">
+                        <h3 class="difficulty__card__title">Easy</h3>
+                        <p class="difficulty__card__paragraph">Play with 32 cards, 16 pairs</p>
+                    </div>
+                    <div  class="difficulty__card__bubble difficulty__card__bubble--hard">
+                        <img src="src/img/bubble-hard.svg" alt="bubble">
+                    </div>
+                </div>
+            </div>
+            <p class="difficulty__paragraph">Choose your difficulty</p>
+        </div>
+    </main>
     <footer class="footer">
         <h2 class="footer__title">Alejandro Vásquez</h2>
         <ul class="footer__icons">
