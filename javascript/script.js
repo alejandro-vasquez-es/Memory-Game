@@ -2,25 +2,23 @@
 
 // // // POKEBALL
 
-const pokeballAnimation = gsap.timeline({repeat: -1})
+const pokeballAnimation = gsap.timeline({repeat: -1}) // Creating the pokeball animation with GSAP
 .to('#whiteSide', {duration: 0.4, y: 50, ease: 'expo'},0)
 .to('#redSide', {duration: 0.4, y: -50, ease: 'expo'},0)
 .to('#whiteSide', {duration: 0.4, y: 0, ease: 'expo'},0.8)
 .to('#redSide', {duration: 0.4, y: 0, ease: 'expo'},0.8)
 .to('#pokeball', {rotation: 360, transformOrigin:"50% 50%", ease: "power1", duration: 1},1.4);
 
-const loadingTextAnimation = gsap.timeline({repeat:-1})
+const loadingTextAnimation = gsap.timeline({repeat:-1}) // Creating the text loading animation with GSAP
 .from(".pokeball__letter", {duration: .24 , opacity: .7, stagger: 0.24})
 
-const hideLoadingPokeball = () =>{
+const LoadingPokeball = document.querySelector('.pokeball-container');
+const hideLoadingPokeball = () =>{ // Function to hide de loading pokeball when 
     for (const bodyParts of document.querySelector('body').children) {
-        bodyParts.classList.forEach(bodyPartsClass => {
-            if (bodyPartsClass === 'hidden') {
-                bodyParts.classList.remove('hidden')
-            }
-        })
+        if (bodyParts.classList.contains('hidden')) {
+            bodyParts.classList.remove('hidden')
+        }
     }
-    const LoadingPokeball = document.querySelector('.pokeball-container');
     LoadingPokeball.classList.add('hidden');
     pokeballAnimation.pause();
     loadingTextAnimation.pause();
@@ -42,18 +40,44 @@ playNowButton.addEventListener('click', hideHomeContent)
 
 // // // DIFFICULTY
 
-let difficultyCards = document.getElementById('difficultyCards');
-difficultyCards = Array.from(difficulty.children[0].children) 
+const difficultyCards = document.querySelectorAll('.difficulty__card');
 
-
-difficultyCards.forEach(element => {
-    console.log(element);
-    element.addEventListener('click', ()=>{
-        console.log('ejje');
-        // if (element.classList.contains('difficulty__selected')) {
-        //     console.log('contiene');
-        // }
+for (const difficultyCard of difficultyCards) {
+    difficultyCard.addEventListener('click', function(){
+        if (!this.classList.contains('difficulty__selected')) {
+            for (const difficultyCard of difficultyCards) {
+                difficultyCard.classList.remove('difficulty__selected');
+            }
+            this.classList.add('difficulty__selected');
+        }
     })
-});
+}
 
-// difficultyCards.addEventListener('click', selectAndUnselectDifficultyCards)
+const playButtons = document.querySelectorAll('.difficulty__button');
+const home = document.querySelector('#home');
+
+const hideDifficulty = (e) =>{
+    let cardClicked = e.currentTarget.parentNode.parentNode;
+    if (cardClicked.classList.contains('difficulty__selected')) {
+        difficulty.classList.add('hidden');
+        LoadingPokeball.classList.remove('hidden');
+        pokeballAnimation.play();
+        loadingTextAnimation.play();
+        home.classList.add('hidden')
+        switch (cardClicked.id) {
+            case 'easy':
+                console.log(cardClicked.id);
+                break;
+            case 'medium':
+                console.log(cardClicked.id);
+                break;
+            case 'hard':
+                console.log(cardClicked.id);
+                break;
+        }
+    }
+}
+
+for (const playButton of playButtons) {
+    playButton.addEventListener('click', hideDifficulty);
+}

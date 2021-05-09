@@ -1,0 +1,72 @@
+.medium
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    grid-template-rows: 1fr 1fr 1fr 1fr
+    gap: .625rem 0.5rem
+    margin: 0 2rem
+    place-items: center
+.card-back
+    background-color: #3B5EA0
+    height: 16vh
+    overflow: hidden
+    border-radius: 0.6rem
+    border: 3px #434A54 solid
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    cursor: pointer
+    p
+        color: #D3A43A
+        font-weight: 800
+        font-size: 0.7rem
+        text-align: center
+    img
+        width: 40%
+
+.card-front
+    background-color: #C7B4D7
+    height: 16vh
+    overflow: hidden
+    border-radius: 0.6rem
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    cursor: pointer
+    .card-front__title
+        background-color: #CB2322
+        width: 100%
+        height: 20%
+        display: flex
+        align-items: center
+        justify-content: center
+        h3
+            color: #f3f3f3
+            font-weight: 800
+            font-size: 0.6rem
+            text-align: center
+            margin: 0
+    .card-front__shadow
+        position: absolute
+        top: 0
+        right: 0
+        width: 78%
+        align-self: stretch
+        svg
+            margin: 0
+            padding: 0
+            vertical-align: top
+            position: relative
+            fill: #C9C6E8
+    .card-front__image-container
+        z-index: 1
+        flex-grow: 1
+        align-items: center
+        display: flex
+        width: 95%
+        justify-items: center
+        img
+            width: 100%

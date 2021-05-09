@@ -1,5 +1,4 @@
 .home
-    height: 100vh
     display: flex
     flex-direction: column
     justify-content: space-evenly
@@ -10,13 +9,15 @@
     color: $dark-gray
     font-size: 1.5rem
     width: 60%
+    margin: 4rem auto
     font-weight: 600
 .content
     display: flex
     flex-direction: column
-    justify-content: space-between
+    justify-content: space-around
     align-items: center
-    height: 50vh
+    height: calc( 100vh - 11.75rem)
+    // height: 100vh
 .content__description
     margin: 3rem 0
     width: 65%
