@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
 <body>
+
     <section class="pokeball-container">
         <div class="pokeball">
             <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,9 +50,12 @@
             <span class="pokeball__letter">.</span>
         </div>
     </section>
+
     <main class="hidden home" id="home">
-        <h1 class="home__title">Pokemon Game Memory</h1>
-        <div class="hidden content" id="hideHome">
+        <div class="home__title">
+            <h1>Pokemon Game Memory</h1>
+        </div>
+        <div class="content" id="hideHome">
             <p class="content__description">Play a pokemon memory game, with first generation pokemon and random pokemon cards.</p>
             <div class="content__button" id="playNowButton">
                 <p>Play Now</p>
@@ -78,7 +82,7 @@
                     <img class="difficulty__card__image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" alt="Charmander">
                     <div class="difficulty__texts-container">
                         <h3 class="difficulty__card__title">Medium</h3>
-                        <p class="difficulty__card__paragraph">Play with 32 cards, 16 pairs</p>
+                        <p class="difficulty__card__paragraph">Play with 16 cards, 8 pairs</p>
                         <div class="content__button difficulty__button">
                             <p>Play</p>
                             <i class="fas fa-play"></i>
@@ -92,7 +96,7 @@
                     <img class="difficulty__card__image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charmander">
                     <div class="difficulty__texts-container">
                         <h3 class="difficulty__card__title">Hard</h3>
-                        <p class="difficulty__card__paragraph">Play with 32 cards, 16 pairs</p>
+                        <p class="difficulty__card__paragraph">Play with 30 cards, 15 pairs</p>
                         <div class="content__button difficulty__button">
                             <p>Play</p>
                             <i class="fas fa-play"></i>
@@ -106,215 +110,50 @@
             <p class="difficulty__paragraph">Choose your difficulty</p>
         </div>
     </main>
-    <section class="game" id="game">
+
+    <section class="hidden game" id="game">
         <div class="game__details-in-game">
-            <p>time: 1:30 min</p>
-            <p>faults: 1</p>
+            <p id="stopWatch">time:</p>
+            <p id="fault">faults: 0</p>
         </div>
-        <div class="medium" id="medium">
-            <div class="card-back">
-                <p>Pokemon</p>
-                <img src="src/img/pokeball.svg" alt="pokeball">
-                <p>Pokemon</p>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            <div class="card-front">
-                <div class="card-front__image-container">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png" alt="ditto">
-                </div>
-                <div class="card-front__shadow">
-                    <svg width="57" height="71" viewBox="0 0 57 71" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5001 0H57L57.0003 71C51.5 40.5 21 38 8.50013 38C-3.99973 38 -1.49997 11.5 17.5001 0Z" fill="#C4C4C4"/>
-                    </svg>
-                </div>
-                <div class="card-front__title">
-                    <h3>Ditto</h3>
-                </div>
-            </div>
-            
+        
+        <div class="hidden easy" id="easyGame">
+        </div>
+
+        <div class="hidden medium" id="mediumGame">
+        </div>
+
+        <div class="hidden hard" id="hardGame">
+        </div>
+
+        <div class="go-home" id="goHome">
+            <p class="go-home__paragraph">Home</p>
+            <i class="fas fa-home go-home__icon"></i>
         </div>
     </section>
+    
+    <section class="hidden score">
+        <h2 class="score__title">Your Score: 6200</h2>
+        <table class="score__table">
+            <tr>
+                <th class="score__details" colspan="2">Details</th>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>1:30 min</td>
+            </tr>
+            <tr>
+                <td>Difficulty</td>
+                <td>medium</td>
+            </tr>
+            <tr>
+                <td>Faults</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </section>
+    
+    
     <footer class="footer">
         <h2 class="footer__title">Alejandro Vásquez</h2>
         <ul class="footer__icons">
@@ -327,6 +166,7 @@
         <i class="fas fa-code footer__code"></i>
         <p class="copyright">&#169; 2021 copyright all rights reserved</p>
     </footer>
+    
     <script src="node_modules/gsap/dist/gsap.min.js"></script>
     <script src="javascript/script.js"></script>
 </body>

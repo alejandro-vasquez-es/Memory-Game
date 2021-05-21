@@ -1,2 +1,44 @@
 .hidden
     display: none !important
+.go-home
+    display: flex
+    background-color: $red
+    justify-content: center
+    align-items: center
+    border-radius: 10rem
+    cursor: pointer
+    padding: 0.25rem 0.5rem
+    width: 20%
+    justify-self: right
+    flex: none
+    align-self: flex-end
+    margin-right: 2rem
+    .go-home__paragraph
+        font-size: 0.8rem
+        color: $font
+    .go-home__icon
+        font-size: 0.8rem
+        padding-left: 0.5rem
+        color: $font
+
+.success-message
+    width: 70%
+    display: block
+    position: absolute
+    left: 50%
+    transform: translate(-50%, -50%)
+    top: 50%
+    overflow: hidden
+    div
+        opacity: 0
+        display: flex
+        width: 95%
+        border-radius: 0.8rem
+        color: #155724
+        background-color: #d4edda
+        border: 1px #155724 solid
+        justify-content: center
+        align-items: center
+        i
+            margin-left: 1rem
+            font-size: 1.75rem

@@ -1,23 +1,22 @@
-.medium
+.easy
     display: flex
     flex-wrap: wrap
-    width: 90%
-    height: 80%
-    margin: 0 auto
-    justify-content: space-evenly
-    align-content: space-evenly
+    justify-content: center
 
-.card-container
-    height: 14vh
-    width: 19vw
+.card-easy__container
+    height: 18vh
+    width: 23vw
     position: relative
-    .card
+    margin: 0.5rem  
+    .card-easy
         position: absolute
         width: 100%
         height: 100%
         transform-style: preserve-3d
         transition: transform 0.5s ease 
-        .card__back
+        // &:hover
+        //     transform: rotateY(180deg)
+        .card-easy__back
             position: absolute
             width: 100%
             height: 100%
@@ -26,7 +25,7 @@
             min-height: 14vh
             overflow: hidden
             border-radius: 0.6rem
-            border: 2px #434A54 solid
+            border: 3px #434A54 solid
             display: flex
             flex-direction: column
             justify-content: space-around
@@ -35,18 +34,17 @@
             p
                 color: #D3A43A
                 font-weight: 800
-                font-size: 0.7rem
+                font-size: 0.9rem
                 text-align: center
             img
                 width: 40%
-        .card__front
+        .card-easy__front
             z-index: 2
             position: absolute
             width: 100%
             height: 100%
             backface-visibility: hidden
             transform: rotateY(180deg)
-            background-color: #C7B4D7
             overflow: hidden
             border-radius: 0.6rem
             display: flex
@@ -54,32 +52,36 @@
             justify-content: space-between
             align-items: center
             cursor: pointer
-            .card-front__title
+            .card-easy__title
                 background-color: #CB2322
                 width: 100%
                 height: 20%
                 display: flex
                 align-items: center
                 justify-content: center
+                z-index: 2
                 h3
                     color: #f3f3f3
                     font-weight: 800
-                    font-size: 0.53rem
+                    font-size: 0.7rem
                     text-align: center
                     margin: 0
-            .card-front__shadow
+            .card-easy__shadow
                 position: absolute
                 top: 0
                 right: 0
-                width: 78%
-                align-self: stretch
+                width: 90%
                 svg
                     margin: 0
                     padding: 0
                     vertical-align: top
                     position: relative
-                    fill: #C9C6E8
-            .card-front__image-container
+                    right: 0
+                    // width: 57px
+                    // height: 71px
+                    width: 100%
+                    height: 100%
+            .card-easy__image-container
                 flex-grow: 1
                 z-index: 1
                 align-items: center
@@ -89,4 +91,3 @@
                 img
                     width: 100%
                     
-        
