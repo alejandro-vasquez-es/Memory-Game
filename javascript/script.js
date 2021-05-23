@@ -78,6 +78,7 @@ const startGame = (section) =>{
     
     // Timer
     const stopWatch = document.getElementById('stopWatch');
+    stopWatch.textContent = `time: 0s`;
     stopWatchInterval =setInterval(()=>{
         seconds++
         if (seconds === 60) {
@@ -144,9 +145,25 @@ const getColorByType = (type) =>{
     }
 }
 
+const score = document.getElementById('score');
+
 const winGame = (currentDifficulty) =>{
     clearInterval(stopWatchInterval)
-    let totalScore = 0;
+    const successMessage = document.createElement('div');
+    successMessage.classList.add('success-message');
+    successMessage.innerHTML = `
+    <div id='success'> 
+        <h3 class=''>You won the game :)</h3>
+        <i class="fas fa-check-circle"></i>
+    </div>
+    `;
+    game.append(successMessage);
+    gsap.to('#success', {duration: 1, opacity: 0.9})
+    
+    setTimeout(()=>{
+        game.classList.add('hidden');     
+        
+        let totalScore = 0;
     switch (currentDifficulty) {
         case 'easy':
             totalScore = 50000 - 5000*numberOfFaults - ((seconds + minutes*60)-12)*200;
@@ -162,23 +179,34 @@ const winGame = (currentDifficulty) =>{
     if (Math.sign(totalScore) === -1) {
         totalScore = 0;
     }
-    
-    setTimeout(()=>{
-        const successMessage = document.createElement('div');
-        successMessage.classList.add('success-message');
-        successMessage.innerHTML = `
-        <div id='success'>
-            <h3 class=''>You won the game :)</h3>
-            <i class="fas fa-check-circle"></i>
+
+    score.classList.remove('hidden');
+    score.innerHTML = `
+        <h2 class="score__title">Your Score: ${totalScore}</h2>
+        <table class="score__table">
+            <tr>
+                <th class="score__details" colspan="2">Details</th>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>${TextStopWatch}</td>
+            </tr>
+            <tr>
+                <td>Difficulty</td>
+                <td>${currentDifficulty}</td>
+            </tr>
+            <tr>
+                <td>Faults</td>
+                <td>${numberOfFaults}</td>
+            </tr>
+        </table>
+        <div class="go-home" id="goHome2">
+            <p class="go-home__paragraph">Home</p>
+            <i class="fas fa-home go-home__icon"></i>
         </div>
-        `;
-        game.append(successMessage);
-        gsap.to('#success', {duration: 1, opacity: 0.9})
-    },600);
-
-    
-
-
+        `
+        document.getElementById('goHome2').addEventListener('click', goToHome)
+    },2200);
 }
 
 // Flip cards
@@ -362,3 +390,21 @@ const hideDifficulty = (e) =>{
 for (const playButton of playButtons) {
     playButton.addEventListener('click', hideDifficulty);
 }
+
+const goToHome = ()=>{
+    game.classList.add('hidden');
+    homeContent.classList.remove('hidden');
+    game.children[1].innerHTML="";
+    game.children[2].innerHTML="";
+    game.children[3].innerHTML="";
+    seconds = 0;
+    minutes = 0;
+    numberOfFaults= 0;
+    clearInterval(stopWatchInterval);
+    stopWatch.textContent = "";
+    faultsText.innerHTML = "faults: 0";
+    firstCardFlipped = '';
+    score.classList.add('hidden')
+    // document.getElementById('success').style.opacity= 0;
+}
+goHome.addEventListener('click', goToHome)
