@@ -431,6 +431,21 @@ p {
   font-size: 0.8rem;
 }
 
+@media screen and (min-width: 700px) {
+  .footer__title {
+    font-size: 2rem;
+  }
+  .footer__icons i {
+    font-size: 1.5rem;
+  }
+  .footer__code {
+    font-size: 2rem;
+  }
+  .copyright {
+    font-size: 1.5rem;
+  }
+}
+
 .pokeball-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -455,17 +470,25 @@ p {
   overflow: visible;
 }
 
-.pokeball__text {
-  font-size: 1.1rem;
-  color: #555555;
-  margin-top: 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.pokeball__text span {
-  display: block;
+@media screen and (min-width: 700px) {
+  .pokeball svg {
+    height: 150px;
+    width: 150px;
+  }
+  .pokeball__text {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-top: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .pokeball__text span {
+    display: block;
+  }
+  .pokeball__text {
+    font-size: 1.5rem;
+  }
 }
 
 body {
@@ -556,6 +579,20 @@ body {
           align-items: center;
   color: #f3f3f3;
   cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+  .home__title h1 {
+    font-size: 2.7rem;
+  }
+  .content__description {
+    font-size: 1.8rem;
+  }
+  .content__button {
+    width: 20%;
+    padding: 1.2rem 1.2rem;
+    font-size: 1.4rem;
+  }
 }
 
 .play {
@@ -719,6 +756,48 @@ body {
 
 .difficulty__texts-container {
   z-index: 1;
+}
+
+@media screen and (min-width: 700px) {
+  .difficulty__card {
+    border-radius: 1rem;
+    height: 27vh;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .difficulty__card__image {
+    width: 70%;
+  }
+  .difficulty__paragraph {
+    font-size: 2rem;
+  }
+  .difficulty__texts-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 40%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .difficulty__texts-container h3 {
+    font-size: 1.1rem;
+  }
+  .difficulty__texts-container p {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    font-size: 0.8rem;
+  }
+  .difficulty__button {
+    padding: 0.6rem 0.6rem;
+    width: 30%;
+    font-size: 1rem;
+  }
 }
 
 .game {
