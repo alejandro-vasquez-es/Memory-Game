@@ -1,0 +1,1217 @@
+/* ==========================================================================
+ * Normalize.scss settings
+ * ========================================================================== */
+/**
+ * Includes legacy browser support IE6/7
+ *
+ * Set to false if you want to drop support for IE6 and IE7 */
+/* Base
+ * ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *  user zoom.
+ * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ *  `em` units. */
+html {
+  font-family: 'Oxanium', cursive;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin. */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+ * ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11. */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera. */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices. */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22. */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+ * ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10. */
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers. */
+a:active, a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome. */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome. */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Addresses styling not present in IE 8/9. */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers. */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+ * ========================================================================== */
+/**
+ * 1. Remove border when inside `a` element in IE 8/9/10.
+ * 2. Improves image quality when scaled in IE 7. */
+img {
+  border: 0;
+  width: 100%;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11. */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+ * ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari. */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers. */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers. */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome. */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+ * ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set. */
+/**
+ * 1. Correct color not being inherited.
+ *  Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * 4. Improves appearance and consistency in all browsers. */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11. */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox. */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *  and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *  `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *  Known issue: inner spacing remains in IE 6. */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements. */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+. */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet. */
+input {
+  line-height: normal;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ *  Known issue: excess padding remains in IE 6. */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`. */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *  (include `-moz` to future-proof). */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance). */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding. */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Corrects text not wrapping in Firefox 3.
+ * 4. Corrects alignment displayed oddly in IE 6/7. */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11. */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X. */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+ * ========================================================================== */
+/**
+ * Remove most spacing between table cells. */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.footer {
+  background-color: #616161;
+  color: #f3f3f3;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.footer__icons {
+  margin: 0;
+  padding: 0;
+  width: 65%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer__icons li {
+  list-style: none;
+}
+
+.footer__icons i {
+  font-size: 1rem;
+}
+
+.footer__code {
+  font-size: 1.25rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
+}
+
+.pokeball-container {
+  display: flex;
+  width: 100%;
+  height: 65vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pokeball svg {
+  height: 80px;
+  width: 80px;
+  overflow: visible;
+}
+
+body {
+  font-family: 'Oxanium', cursive;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+}
+
+.home__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+}
+
+.home__title h1 {
+  text-align: center;
+  color: #555555;
+  font-size: 1.5rem;
+  width: 60%;
+  margin: 0;
+  font-weight: 600;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+
+.content__description {
+  margin: 3rem 0;
+  width: 65%;
+  text-align: center;
+  font-size: 1rem;
+  color: #767676;
+}
+
+.content__button {
+  display: flex;
+  width: 30%;
+  background-color: #CB2322;
+  padding: 0.7rem 1rem;
+  border-radius: 5rem;
+  justify-content: space-around;
+  align-items: center;
+  color: #f3f3f3;
+  cursor: pointer;
+}
+
+.play {
+  border-radius: 0.8rem;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+}
+
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80vh;
+}
+
+.difficulty__paragraph {
+  text-align: center;
+  margin-top: 4rem;
+  color: #555555;
+}
+
+.difficulty__cards {
+  width: 80%;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.difficulty__card {
+  box-shadow: 0 3px 2px 0px #646464;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  width: 32%;
+  height: 23vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.difficulty__card__bubble--hard {
+  right: 0;
+}
+
+.difficulty__card__bubble--medium {
+  right: 0;
+  top: 0;
+  width: 63%;
+}
+
+.difficulty__card__bubble {
+  position: absolute;
+  bottom: 0;
+  width: 78%;
+  align-self: stretch;
+}
+
+.difficulty__card__bubble img {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+}
+
+.difficulty__card--easy {
+  background-color: #f89040;
+}
+
+.difficulty__card__image {
+  width: 66.66%;
+  z-index: 1;
+}
+
+.difficulty__card__title {
+  text-align: center;
+  font-size: 0.6rem;
+  color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.difficulty__card__paragraph {
+  text-align: center;
+  font-size: 0.5rem;
+  color: #ddd;
+  padding: 0 0.5rem;
+  flex-grow: 1;
+}
+
+.difficulty__card--hard {
+  background-color: #D04820;
+}
+
+.difficulty__card--medium {
+  background-color: #FF7657;
+}
+
+.difficulty__selected {
+  box-shadow: 0 5px 4px 0px #646464;
+  transform: scale(1.4);
+  z-index: 2;
+}
+
+.difficulty__selected .difficulty__texts-container .difficulty__button {
+  opacity: 1;
+}
+
+.difficulty__button {
+  padding: 0.15rem 0.5rem;
+  width: 40%;
+  margin: 0.5rem auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.difficulty__button p {
+  font-size: .6rem;
+}
+
+.difficulty__button i {
+  font-size: .5rem;
+}
+
+.difficulty__texts-container {
+  z-index: 1;
+}
+
+.game {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card__front-selected {
+  border: 3px #5CDD1D solid;
+}
+
+.game__details-in-game {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rem 2rem;
+}
+
+.game__details-in-game p {
+  color: #696969;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.medium {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  height: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+
+.card-container {
+  height: 14vh;
+  width: 19vw;
+  position: relative;
+}
+
+.card-container .card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.card-container .card .card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #3B5EA0;
+  min-height: 14vh;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  border: 2px #434A54 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-container .card .card__back p {
+  color: #D3A43A;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.card-container .card .card__back img {
+  width: 40%;
+}
+
+.card-container .card .card__front {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-color: #C7B4D7;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-container .card .card__front .card-front__title {
+  background-color: #CB2322;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container .card .card__front .card-front__title h3 {
+  color: #f3f3f3;
+  font-weight: 800;
+  font-size: 0.53rem;
+  text-align: center;
+  margin: 0;
+}
+
+.card-container .card .card__front .card-front__shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 78%;
+  align-self: stretch;
+}
+
+.card-container .card .card__front .card-front__shadow svg {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+  fill: #C9C6E8;
+}
+
+.card-container .card .card__front .card-front__image-container {
+  flex-grow: 1;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+  width: 95%;
+  justify-items: center;
+}
+
+.card-container .card .card__front .card-front__image-container img {
+  width: 100%;
+}
+
+.easy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-easy__container {
+  height: 18vh;
+  width: 23vw;
+  position: relative;
+  margin: 0.5rem;
+}
+
+.card-easy__container .card-easy {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.card-easy__container .card-easy .card-easy__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #3B5EA0;
+  min-height: 14vh;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  border: 3px #434A54 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-easy__container .card-easy .card-easy__back p {
+  color: #D3A43A;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.card-easy__container .card-easy .card-easy__back img {
+  width: 40%;
+}
+
+.card-easy__container .card-easy .card-easy__front {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  overflow: hidden;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-easy__container .card-easy .card-easy__front .card-easy__title {
+  background-color: #CB2322;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.card-easy__container .card-easy .card-easy__front .card-easy__title h3 {
+  color: #f3f3f3;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-align: center;
+  margin: 0;
+}
+
+.card-easy__container .card-easy .card-easy__front .card-easy__shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+}
+
+.card-easy__container .card-easy .card-easy__front .card-easy__shadow svg {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-easy__container .card-easy .card-easy__front .card-easy__image-container {
+  flex-grow: 1;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+  width: 95%;
+  justify-items: center;
+}
+
+.card-easy__container .card-easy .card-easy__front .card-easy__image-container img {
+  width: 100%;
+}
+
+.hard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 95%;
+  height: 85%;
+  margin: 0 auto;
+  gap: auto;
+}
+
+.card-hard__container {
+  height: 10vh;
+  width: 13vw;
+  position: relative;
+}
+
+.card-hard__container .card-hard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.card-hard__container .card-hard .card-hard__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #3B5EA0;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  border: 2px #434A54 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-hard__container .card-hard .card-hard__back p {
+  color: #D3A43A;
+  font-weight: 800;
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+.card-hard__container .card-hard .card-hard__back img {
+  width: 50%;
+}
+
+.card-hard__container .card-hard .card-hard__front {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-color: #C7B4D7;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-hard__container .card-hard .card-hard__front .card-hard__title {
+  background-color: #CB2322;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-hard__container .card-hard .card-hard__front .card-hard__title h3 {
+  color: #f3f3f3;
+  font-weight: 800;
+  font-size: 0.37rem;
+  text-align: center;
+  margin: 0;
+}
+
+.card-hard__container .card-hard .card-hard__front .card-hard__shadow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 78%;
+}
+
+.card-hard__container .card-hard .card-hard__front .card-hard__shadow svg {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+}
+
+.card-hard__container .card-hard .card-hard__front .card-hard__image-container {
+  flex-grow: 1;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+  width: 95%;
+  justify-items: center;
+}
+
+.card-hard__container .card-hard .card-hard__front .card-hard__image-container img {
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.go-home {
+  display: flex;
+  background-color: #CB2322;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  width: 20%;
+  justify-self: right;
+  flex: none;
+  align-self: flex-end;
+  margin-right: 2rem;
+}
+
+.go-home .go-home__paragraph {
+  font-size: 0.8rem;
+  color: #f3f3f3;
+}
+
+.go-home .go-home__icon {
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
+  color: #f3f3f3;
+}
+
+.success-message {
+  width: 70%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  overflow: hidden;
+}
+
+.success-message div {
+  opacity: 0;
+  display: flex;
+  width: 95%;
+  border-radius: 0.8rem;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px #155724 solid;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-message div i {
+  margin-left: 1rem;
+  font-size: 1.75rem;
+}
+
+.score {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.score__title {
+  color: #555;
+  font-size: 2.25rem;
+  text-align: center;
+  width: 70%;
+}
+
+.score__table {
+  overflow: hidden;
+  border-radius: 1rem;
+  width: 70%;
+  position: relative;
+  background: #EDEDED;
+  color: #555;
+}
+
+.score__table tr .score__details {
+  background-color: #e6e6e6;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+
+.score__table tr td {
+  border-top: 0.2rem solid #e6e6e6;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.2rem;
+  padding-left: 1rem;
+}
+
+.score__table tr td:nth-child(1) {
+  border-right: 0.3rem solid #e6e6e6;
+}
+
+@media screen and (min-width: 700px) {
+  .footer__title {
+    font-size: 2rem;
+  }
+  .footer__icons i {
+    font-size: 1.5rem;
+  }
+  .footer__code {
+    font-size: 2rem;
+  }
+  .copyright {
+    font-size: 1.5rem;
+  }
+  .game__time {
+    font-size: 1.75rem !important;
+  }
+  .card-easy__back p {
+    font-size: 2.5rem;
+  }
+  .home__title h1 {
+    font-size: 2.7rem;
+  }
+  .content__description {
+    font-size: 1.8rem;
+  }
+  .content__button {
+    width: 20%;
+    padding: 1.2rem 1.2rem;
+    font-size: 1.4rem;
+  }
+  .pokeball svg {
+    height: 150px;
+    width: 150px;
+  }
+  .pokeball__text {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-top: 0.5rem;
+    display: flex;
+  }
+  .pokeball__text span {
+    display: block;
+  }
+  .pokeball__text {
+    font-size: 1.5rem;
+  }
+  .difficulty__card {
+    border-radius: 1rem;
+    height: 27vh;
+    justify-content: space-around;
+  }
+  .difficulty__card__image {
+    width: 70%;
+  }
+  .difficulty__paragraph {
+    font-size: 2rem;
+  }
+  .difficulty__texts-container {
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .difficulty__texts-container h3 {
+    font-size: 1.1rem;
+  }
+  .difficulty__texts-container p {
+    flex: none;
+    font-size: 0.8rem;
+  }
+  .difficulty__button {
+    padding: 0.6rem 0.6rem;
+    width: 30%;
+    font-size: 1rem;
+  }
+  .card-easy__container {
+    height: 22vh;
+    width: 20vw;
+  }
+  .card-easy__container .card-easy .card-easy__back {
+    border-radius: 1rem;
+  }
+  .card-easy__container .card-easy .card-easy__back p {
+    font-size: 1.35rem;
+  }
+  .card-easy__container .card-easy .card-easy__back img {
+    width: 50%;
+  }
+  .card-easy__container .card-easy .card-easy__front {
+    border-radius: 1rem;
+  }
+  .card-easy__container .card-easy .card-easy__front .card-easy__title h3 {
+    font-size: 1.35rem;
+  }
+  .card-easy__container .card-easy .card-easy__front .card-easy__image-container {
+    width: 100%;
+  }
+  .success-message {
+    width: 70%;
+  }
+  .success-message div {
+    width: 95%;
+    border-radius: 1.4rem;
+  }
+  .success-message div h3 {
+    font-size: 2rem;
+  }
+  .success-message div i {
+    font-size: 2rem;
+  }
+  .score__title {
+    font-size: 3rem;
+  }
+  .score__table {
+    border-radius: 1.5rem;
+  }
+  .score__table tr .score__details {
+    padding: 0.3rem;
+    font-size: 2rem;
+  }
+  .score__table tr td {
+    font-size: 1.5rem;
+  }
+  .go-home {
+    border-radius: 10rem;
+    padding: 0.5rem 1rem;
+  }
+  .go-home .go-home__paragraph {
+    font-size: 1.5rem;
+  }
+  .go-home .go-home__icon {
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

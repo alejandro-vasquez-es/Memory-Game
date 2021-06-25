@@ -91,7 +91,7 @@ const startGame = (section) =>{
             TextStopWatch = `time: ${minutes}min ${seconds}s`;
         }
         stopWatch.textContent= TextStopWatch;
-    },1000)
+    },1000);
 }
 // GETTING EASY/MEDIUM/HARD CARD
 
@@ -151,6 +151,7 @@ const winGame = (currentDifficulty) =>{
     clearInterval(stopWatchInterval)
     const successMessage = document.createElement('div');
     successMessage.classList.add('success-message');
+    successMessage.id='successMessage';
     successMessage.innerHTML = `
     <div id='success'> 
         <h3 class=''>You won the game :)</h3>
@@ -162,7 +163,7 @@ const winGame = (currentDifficulty) =>{
     
     setTimeout(()=>{
         game.classList.add('hidden');     
-        
+        console.log(document.getElementById(currentDifficulty + 'Game').classList.add('hidden'));
         let totalScore = 0;
     switch (currentDifficulty) {
         case 'easy':
@@ -234,6 +235,7 @@ const flipCard = (e) =>{
             difficultyFlipCard = 18;
             break;
         }
+        console.log(difficultyFlipCard);
         e.currentTarget.style.transform = 'rotateY(180deg)';
         CurrentCardFlipped = e.currentTarget;
         nameOfTheCurrentFlippedPokemon = e.currentTarget.children[1].children[0].children[0].alt;
@@ -392,6 +394,7 @@ for (const playButton of playButtons) {
 }
 
 const goToHome = ()=>{
+    successfulCards = 0;
     game.classList.add('hidden');
     homeContent.classList.remove('hidden');
     game.children[1].innerHTML="";
@@ -405,6 +408,8 @@ const goToHome = ()=>{
     faultsText.innerHTML = "faults: 0";
     firstCardFlipped = '';
     score.classList.add('hidden')
-    // document.getElementById('success').style.opacity= 0;
+    if (document.getElementById('successMessage')) {
+        game.removeChild(document.getElementById('successMessage'));
+    }
 }
 goHome.addEventListener('click', goToHome)
