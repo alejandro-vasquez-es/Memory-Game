@@ -4,12 +4,27 @@
     justify-content: space-evenly
     justify-items: center
     align-items: center
+    @media screen and ( min-width: 1020px )
+        justify-content: normal
+        justify-items: normal
+        flex-direction: row
+        align-items: normal
+        display: grid;
+        height: 100vh
+        grid-template-areas: "a a a" "b c c" "b c c" "b c c"
 .home__title
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
     height: 20vh
+    @media screen and ( min-width: 1020px )
+        justify-content: start !important
+        height: auto
+        grid-area: a
+        width: 100%
+        margin: 1rem 0
+        margin-top: 4rem
     h1
         text-align: center
         color: $dark-gray
@@ -17,19 +32,34 @@
         width: 60%
         margin: 0
         font-weight: 600
+        @media screen and ( min-width: 1020px )
+            font-size: 1.8rem !important
+            width: 100%
+            align-self: flex-end
 .content
     display: flex
     flex-direction: column
     justify-content: space-around
     align-items: center
     height: 80vh
-    // height: 100vh
+    @media screen and ( min-width: 1020px )
+        align-items: flex-start
+        margin-left: 6rem
+        grid-area: b
+        height: auto
+        justify-content: start
+        margin-top: 30%
 .content__description
     margin: 3rem 0
     width: 65%
     text-align: center
     font-size: 1rem
     color: $light-gray
+    @media screen and ( min-width: 1020px )
+        font-size: 1.55rem !important
+        text-align: left
+        width: 70%
+        margin: 0
 .content__button
     display: flex
     width: 30%
@@ -40,3 +70,5 @@
     align-items: center
     color: $font
     cursor: pointer
+    @media screen and ( min-width: 1020px )
+        display: none;

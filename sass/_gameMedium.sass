@@ -6,11 +6,21 @@
     margin: 0 auto
     justify-content: space-evenly
     align-content: space-evenly
+    @media screen and ( min-width: 700px )
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(4, 1fr)
+        gap: 1rem 1.25rem
+        width: 80%
+        
 
 .card-container
     height: 14vh
     width: 19vw
     position: relative
+    @media screen and ( min-width: 700px )
+        width: auto
+        height: auto
     .card
         position: absolute
         width: 100%
@@ -39,6 +49,11 @@
                 text-align: center
             img
                 width: 40%
+            @media screen and ( min-width: 700px )
+                p
+                    font-size: 1rem
+                img
+                    width: 45%
         .card__front
             z-index: 2
             position: absolute
@@ -61,12 +76,16 @@
                 display: flex
                 align-items: center
                 justify-content: center
+                @media screen and ( min-width: 700px )
+                    height: 30%
                 h3
                     color: #f3f3f3
                     font-weight: 800
                     font-size: 0.53rem
                     text-align: center
                     margin: 0
+                    @media screen and ( min-width: 700px )
+                        font-size: .9rem
             .card-front__shadow
                 position: absolute
                 top: 0
@@ -80,6 +99,8 @@
                     position: relative
                     fill: #C9C6E8
             .card-front__image-container
+                @media screen and ( min-width: 700px )
+                    width: 90%
                 flex-grow: 1
                 z-index: 1
                 align-items: center

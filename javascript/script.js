@@ -13,11 +13,7 @@ const loadingTextAnimation = gsap.timeline({repeat:-1}) // Creating the text loa
 const LoadingPokeball = document.querySelector('.pokeball-container');
 const hideLoadingPokeball = () =>{ // Function to hide de loading pokeball when 
     for (const bodyParts of document.querySelector('body').children) {
-        if (bodyParts.classList.contains('home')) {
-            if (!bodyParts.classList.contains('game')) {
-                bodyParts.classList.remove('hidden');
-            }
-        }
+        if (bodyParts.classList.contains('home')) bodyParts.classList.remove('hidden');
     }
     LoadingPokeball.classList.add('hidden');
     pokeballAnimation.pause();
@@ -32,7 +28,7 @@ const homeContent = document.getElementById('hideHome');
 const difficulty = document.getElementById('difficulty')
 const hideHomeContent = () =>{
     homeContent.classList.add('hidden');
-    difficulty.classList.remove('hidden')
+    difficulty.style.display = 'flex';
 }
 playNowButton.addEventListener('click', hideHomeContent)
 
@@ -163,7 +159,6 @@ const winGame = (currentDifficulty) =>{
     
     setTimeout(()=>{
         game.classList.add('hidden');     
-        console.log(document.getElementById(currentDifficulty + 'Game').classList.add('hidden'));
         let totalScore = 0;
     switch (currentDifficulty) {
         case 'easy':
@@ -235,7 +230,6 @@ const flipCard = (e) =>{
             difficultyFlipCard = 18;
             break;
         }
-        console.log(difficultyFlipCard);
         e.currentTarget.style.transform = 'rotateY(180deg)';
         CurrentCardFlipped = e.currentTarget;
         nameOfTheCurrentFlippedPokemon = e.currentTarget.children[1].children[0].children[0].alt;
@@ -370,7 +364,7 @@ const getHardCards = () =>{
 const hideDifficulty = (e) =>{
     let cardClicked = e.currentTarget.parentNode.parentNode;
     if (cardClicked.classList.contains('difficulty__selected')) {
-        difficulty.classList.add('hidden');
+        difficulty.style.display = 'none';
         LoadingPokeball.classList.remove('hidden');
         pokeballAnimation.play();
         loadingTextAnimation.play();
@@ -395,6 +389,12 @@ for (const playButton of playButtons) {
 
 const goToHome = ()=>{
     successfulCards = 0;
+    console.log(game);
+    console.log(game.children[1].classList,game.children[2].classList,game.children[3].classList)
+    game.children[1].classList.add('hidden');
+    game.children[2].classList.add('hidden');
+    game.children[3].classList.add('hidden');
+    console.log(game.children[1].classList,game.children[2].classList,game.children[3].classList)
     game.classList.add('hidden');
     homeContent.classList.remove('hidden');
     game.children[1].innerHTML="";
@@ -407,9 +407,7 @@ const goToHome = ()=>{
     stopWatch.textContent = "";
     faultsText.innerHTML = "faults: 0";
     firstCardFlipped = '';
-    score.classList.add('hidden')
-    if (document.getElementById('successMessage')) {
-        game.removeChild(document.getElementById('successMessage'));
-    }
+    score.classList.add('hidden');
+    if (document.getElementById('successMessage')) game.removeChild(document.getElementById('successMessage'));
 }
 goHome.addEventListener('click', goToHome)
