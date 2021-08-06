@@ -26,9 +26,16 @@ addEventListener('load', hideLoadingPokeball);
 const playNowButton = document.getElementById('playNowButton');
 const homeContent = document.getElementById('hideHome');
 const difficulty = document.getElementById('difficulty')
-const hideHomeContent = () =>{
+
+const hideHomeContent = () => {
     homeContent.classList.add('hidden');
-    difficulty.style.display = 'flex';
+    difficulty.classList.remove('hidden');
+    if (window.matchMedia('(min-width: 1020px)').matches){
+        difficulty.style.display = 'flex';
+    } else{
+        difficulty.style.display = 'flex';
+        difficulty.classList.remove('hidden')
+    }
 }
 playNowButton.addEventListener('click', hideHomeContent)
 
@@ -201,8 +208,8 @@ const winGame = (currentDifficulty) =>{
             <i class="fas fa-home go-home__icon"></i>
         </div>
         `
-        document.getElementById('goHome2').addEventListener('click', goToHome)
-    },2200);
+        document.getElementById('goHome2').addEventListener('click', goToHome);
+    }, 2200);
 }
 
 // Flip cards
@@ -364,11 +371,17 @@ const getHardCards = () =>{
 const hideDifficulty = (e) =>{
     let cardClicked = e.currentTarget.parentNode.parentNode;
     if (cardClicked.classList.contains('difficulty__selected')) {
-        difficulty.style.display = 'none';
+        if (window.matchMedia('(min-width: 1020px)').matches){
+            home.style.height = '20vh';
+            difficulty.style.display = 'none';
+            document.querySelector('.content__description').style.display = 'none';
+        }else{
+            difficulty.classList.add('hidden');
+        }
         LoadingPokeball.classList.remove('hidden');
         pokeballAnimation.play();
         loadingTextAnimation.play();
-        home.classList.add('hidden')
+        home.classList.add('hidden');
         switch (cardClicked.id) {
             case 'easy':
             getEasyCards();
@@ -389,12 +402,10 @@ for (const playButton of playButtons) {
 
 const goToHome = ()=>{
     successfulCards = 0;
-    console.log(game);
-    console.log(game.children[1].classList,game.children[2].classList,game.children[3].classList)
+    home.removeAttribute('style');
     game.children[1].classList.add('hidden');
     game.children[2].classList.add('hidden');
     game.children[3].classList.add('hidden');
-    console.log(game.children[1].classList,game.children[2].classList,game.children[3].classList)
     game.classList.add('hidden');
     homeContent.classList.remove('hidden');
     game.children[1].innerHTML="";
@@ -409,5 +420,9 @@ const goToHome = ()=>{
     firstCardFlipped = '';
     score.classList.add('hidden');
     if (document.getElementById('successMessage')) game.removeChild(document.getElementById('successMessage'));
+    if (window.matchMedia('(min-width: 1020px)').matches) {
+        difficulty.removeAttribute('style');
+        document.querySelector('.content__description').removeAttribute('style');
+    };
 }
-goHome.addEventListener('click', goToHome)
+goHome.addEventListener('click', goToHome);

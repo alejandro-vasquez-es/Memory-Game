@@ -3,7 +3,10 @@
     display: flex
     flex-direction: column
     justify-content: space-evenly
-
+    @media screen and ( min-width: 1020px )
+        align-items: center
+        width: 70%
+        margin: 0 auto
 .card__front-selected
     border: 3px $green solid
 
@@ -11,6 +14,10 @@
     display: flex
     justify-content: space-between
     margin: 0rem 2rem 
+    @media screen and ( min-width: 1020px )
+        width: 100%
+        p
+            font-size: 1.3rem !important
     p
         color: #696969
         font-size: 0.9rem

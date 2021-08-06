@@ -408,8 +408,7 @@ body {
     height: auto;
     grid-area: a;
     width: 100%;
-    margin: 1rem 0;
-    margin-top: 4rem;
+    margin: 2.4rem 0 0;
   }
 }
 
@@ -552,7 +551,7 @@ body {
 
 @media screen and (min-width: 1020px) {
   .difficulty__card {
-    width: 28%;
+    width: 25%;
     min-height: 16rem;
     height: 28vh;
   }
@@ -658,6 +657,14 @@ body {
   justify-content: space-evenly;
 }
 
+@media screen and (min-width: 1020px) {
+  .game {
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
 .card__front-selected {
   border: 3px #5CDD1D solid;
 }
@@ -666,6 +673,15 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 0rem 2rem;
+}
+
+@media screen and (min-width: 1020px) {
+  .game__details-in-game {
+    width: 100%;
+  }
+  .game__details-in-game p {
+    font-size: 1.3rem !important;
+  }
 }
 
 .game__details-in-game p {
@@ -839,11 +855,30 @@ body {
   justify-content: center;
 }
 
+@media screen and (min-width: 1020px) {
+  .easy {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(7.4rem, 14%));
+    grid-template-rows: repeat(2, minmax(12rem, 35%));
+    gap: 1.2rem;
+  }
+}
+
 .card-easy__container {
   height: 18vh;
   width: 23vw;
   position: relative;
   margin: 0.5rem;
+}
+
+@media screen and (min-width: 1020px) {
+  .card-easy__container {
+    width: auto !important;
+    height: auto !important;
+    margin: 0;
+  }
 }
 
 .card-easy__container .card-easy {
@@ -871,6 +906,15 @@ body {
   cursor: pointer;
 }
 
+@media screen and (min-width: 1020px) {
+  .card-easy__container .card-easy .card-easy__back {
+    border-radius: 0.6rem !important;
+  }
+  .card-easy__container .card-easy .card-easy__back p {
+    font-size: 1.2rem !important;
+  }
+}
+
 .card-easy__container .card-easy .card-easy__back p {
   color: #D3A43A;
   font-weight: 800;
@@ -896,6 +940,15 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1020px) {
+  .card-easy__container .card-easy .card-easy__front {
+    border-radius: 0.6rem !important;
+  }
+  .card-easy__container .card-easy .card-easy__front .card-easy__title h3 {
+    font-size: 1rem !important;
+  }
 }
 
 .card-easy__container .card-easy .card-easy__front .card-easy__title {
@@ -1075,6 +1128,13 @@ body {
   flex: none;
   align-self: flex-end;
   margin-right: 2rem;
+}
+
+@media screen and (min-width: 1020px) {
+  .go-home {
+    margin-right: 0;
+    width: auto;
+  }
 }
 
 .go-home .go-home__paragraph {
