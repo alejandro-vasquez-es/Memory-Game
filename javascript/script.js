@@ -203,8 +203,8 @@ const winGame = (currentDifficulty) =>{
                 <td>${numberOfFaults}</td>
             </tr>
         </table>
-        <div class="go-home" id="goHome2">
-            <p class="go-home__paragraph">Home</p>
+        <div class="go-home go-home--section" id="goHome2">
+            <p class="">Home</p>
             <i class="fas fa-home go-home__icon"></i>
         </div>
         `
